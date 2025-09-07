@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ToDo.Application.DTOs.ToDo;
 
 namespace ToDo.Application.Interfaces
 {
     public interface IToDoService
     {
-        Task<List<ProductDto>> GetAllAsync();
-        Task<ProductDto> GetByIdAsync(int id);
-        Task AddAsync(CreateProductDto product);
-        Task DeleteAsync(int id);
-        Task UpdateAsync(UpdateProducDto product);
+        Task<ToDoDto?> GetByIdAsync(int id);
+        Task<List<ToDoDto>?> GetAllAsync();
+        Task<List<ToDoDto>?> GetIncommingAsync(DateTime? dateFrom, DateTime? dateTo);
+        Task<bool> AddAsync(CreateToDoDto toDo);
+        Task<bool> DeleteAsync(int id);
+        Task<bool> UpdateAsync(UpdateTodoDto toDo);
+        //Task<bool> UpdatePercentageAsync(UpdatePercentageTodoDto toDo);
     }
 }
