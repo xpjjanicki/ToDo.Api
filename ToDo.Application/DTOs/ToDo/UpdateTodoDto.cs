@@ -1,4 +1,4 @@
 ﻿namespace ToDo.Application.DTOs.ToDo
 {
-    public record UpdateTodoDto(int id, DateOnly expireDate, string title, string description, short completePercentage);
+    public record UpdateTodoDto(int Id, DateTime ExpireDate, string Title, string Description, short CompletePercentage);
 }
